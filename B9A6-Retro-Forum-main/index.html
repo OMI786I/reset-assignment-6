@@ -18,7 +18,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
-  <body>
+  <body class="p-5">
     <!--navbar-->
     <div>
       <div class="navbar bg-base-100">
@@ -29,18 +29,27 @@
         <div class=""></div>
 
         <div class="navbar-end flex gap-3">
-          <i
-            class="fa-solid fa-house border border-gray-100 rounded-full bg-[#f8f8f9] p-2"
-          ></i>
-          <i
-            class="fa-solid fa-pencil border border-gray-100 rounded-full bg-[#f8f8f9] p-2"
-          ></i>
-          <i
-            class="fa-solid fa-user-plus border border-gray-100 rounded-full bg-[#f8f8f9] p-2"
-          ></i>
-          <i
-            class="fa-regular fa-flag border border-gray-100 rounded-full bg-[#f8f8f9] p-2"
-          ></i>
+          <div class="tooltip" data-tip="hello">
+            <i
+              class="fa-solid fa-house border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+            ></i>
+          </div>
+          <div class="tooltip" data-tip="customize">
+            <i
+              class="fa-solid fa-pencil border border-gray-100 rounded-full bg-[#f8f8f9] p-2"
+            ></i>
+          </div>
+          <div class="tooltip" data-tip="add">
+            <i
+              class="fa-solid fa-user-plus border border-gray-100 rounded-full bg-[#f8f8f9] p-2"
+            ></i>
+          </div>
+          <div class="tooltip" data-tip="feedback">
+            <i
+              class="fa-regular fa-flag border border-gray-100 rounded-full bg-[#f8f8f9] p-2"
+            ></i>
+          </div>
+
           <a class="btn btn-primary">Sign In</a>
         </div>
       </div>
