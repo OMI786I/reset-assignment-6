@@ -40,7 +40,7 @@ const displayData = (data) => {
       <h1>Author : ${element.author.name}</h1>
       </div>
       
-        <h1 class="text-3xl font-bold">${element.title}</h1>
+        <h1 class="text-xl font-bold">${element.title}</h1>
         <p class="py-6">${element.description}</p>
         <div class ="flex justify-between">
         <div class = "flex items-center gap-1">
@@ -82,21 +82,17 @@ const searchFunction = () => {
 
 loadData();
 
-const clickList = (data) => {
+const clickList = (title) => {
   const container = document.getElementById("selected-data");
   const div = document.createElement("div");
-  div.classList.add("flex");
-  div.classList.add("justify-between");
-  div.classList.add("mb-3");
-  div.classList.add("bg-white");
-  div.classList.add("p-4");
-  div.classList.add("rounded-xl");
+
   div.innerHTML = `
-  <h1 class="text-2xl">${data}</h1>
+  <div class = " flex justify-between mb-3 bg-white p-4 rounded-xl">
+  <h1 class="text-xl">${title}</h1>
   <div class="flex items-center gap-1">
   <i class="fa-regular fa-eye"></i>
   <p>1568</p></div>
+  </div>
   `;
-
   container.appendChild(div);
 };
