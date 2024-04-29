@@ -82,6 +82,21 @@ const searchFunction = () => {
 
 loadData();
 
-const clickList = async (id) => {
-  console.log(id);
+const clickList = (data) => {
+  const container = document.getElementById("selected-data");
+  const div = document.createElement("div");
+  div.classList.add("flex");
+  div.classList.add("justify-between");
+  div.classList.add("mb-3");
+  div.classList.add("bg-white");
+  div.classList.add("p-4");
+  div.classList.add("rounded-xl");
+  div.innerHTML = `
+  <h1 class="text-2xl">${data}</h1>
+  <div class="flex items-center gap-1">
+  <i class="fa-regular fa-eye"></i>
+  <p>1568</p></div>
+  `;
+
+  container.appendChild(div);
 };
