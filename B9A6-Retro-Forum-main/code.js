@@ -2,19 +2,25 @@ const loadData = async (data) => {
   const url = `https://openapi.programming-hero.com/api/retro-forum/posts`;
   const res = await fetch(url);
   const data2 = await res.json();
-
   displayData(data2.posts);
 };
 
-loadData();
+const filteredData = async (searchText) => {
+  const url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`;
+  const res = await fetch(url);
+  const data2 = await res.json();
+  console.log(data2);
+  displayData(data2.posts);
+};
 
 const displayData = (data) => {
+  const dataContainer = document.getElementById("data-container");
+  dataContainer.innerHTML = "";
   data.forEach((element) => {
-    const dataContainer = document.getElementById("data-container");
     const dataDiv = document.createElement("div");
 
     dataDiv.innerHTML = `
-    <div class="hero mt-3 rounded-xl bg-base-200">
+    <div class="hero mt-3 rounded-xl bg-base-200" ${element.category}>
     <div class="hero-content flex-row lg:flex-row items-start">
    
     <div class ="avatar online" id="avatar-container"> 
@@ -30,7 +36,7 @@ const displayData = (data) => {
       <div>
 
       <div class = "flex gap-3">
-      <h1>#${element.category}</h1>
+      <h1>#<span id = "categoryName">${element.category}</span></h1>
       <h1>Author : ${element.author.name}</h1>
       </div>
       
@@ -67,3 +73,11 @@ const displayData = (data) => {
     console.log(element);
   });
 };
+
+const searchFunction = () => {
+  const searchField = document.getElementById("search-bar");
+  const searchText = searchField.value;
+  filteredData(searchText);
+};
+
+loadData();
