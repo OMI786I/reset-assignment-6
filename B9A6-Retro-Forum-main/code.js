@@ -56,10 +56,11 @@ const displayData = (data) => {
         <div class = "flex items-center gap-1">
         <i class="fa-regular fa-clock"></i>
         <p>${element.posted_time}</p>
+        
         </div>
         </div>
         <div class = "border rounded-full p-3 bg-[#10b981] cursor-pointer">
-        <i class="fa-regular fa-envelope-open text-white"></i>
+        <button><i class="fa-regular fa-envelope-open text-white" onclick="clickList('${element.title}')"></i></button>
         </div>
         </div>
       </div>
@@ -69,9 +70,8 @@ const displayData = (data) => {
         `;
 
     dataContainer.appendChild(dataDiv);
-
-    console.log(element);
   });
+  console.log(data);
 };
 
 const searchFunction = () => {
@@ -81,3 +81,7 @@ const searchFunction = () => {
 };
 
 loadData();
+
+const clickList = async (id) => {
+  console.log(id);
+};
