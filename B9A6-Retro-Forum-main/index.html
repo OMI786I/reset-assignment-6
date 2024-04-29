@@ -23,31 +23,77 @@
     <div>
       <div class="navbar bg-base-100">
         <div class="navbar-start">
+          <div class="dropdown md:hidden">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <div class="">
+                <div class="tooltip" data-tip="hello">
+                  <i
+                    class="fa-solid fa-house border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+                  ></i>
+                </div>
+                <div class="tooltip" data-tip="customize">
+                  <i
+                    class="fa-solid fa-pencil border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+                  ></i>
+                </div>
+                <div class="tooltip" data-tip="add">
+                  <i
+                    class="fa-solid fa-user-plus border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+                  ></i>
+                </div>
+                <div class="tooltip" data-tip="feedback">
+                  <i
+                    class="fa-regular fa-flag border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+                  ></i>
+                </div>
+              </div>
+            </ul>
+          </div>
+
           <a class="btn btn-ghost text-xl font-bold">ReTro</a>
         </div>
 
-        <div class=""></div>
-
         <div class="navbar-end flex gap-3">
-          <div class="tooltip" data-tip="hello">
-            <i
-              class="fa-solid fa-house border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
-            ></i>
-          </div>
-          <div class="tooltip" data-tip="customize">
-            <i
-              class="fa-solid fa-pencil border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
-            ></i>
-          </div>
-          <div class="tooltip" data-tip="add">
-            <i
-              class="fa-solid fa-user-plus border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
-            ></i>
-          </div>
-          <div class="tooltip" data-tip="feedback">
-            <i
-              class="fa-regular fa-flag border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
-            ></i>
+          <div class="hidden md:inline">
+            <div class="tooltip" data-tip="hello">
+              <i
+                class="fa-solid fa-house border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+              ></i>
+            </div>
+            <div class="tooltip" data-tip="customize">
+              <i
+                class="fa-solid fa-pencil border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+              ></i>
+            </div>
+            <div class="tooltip" data-tip="add">
+              <i
+                class="fa-solid fa-user-plus border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+              ></i>
+            </div>
+            <div class="tooltip" data-tip="feedback">
+              <i
+                class="fa-regular fa-flag border border-gray-100 rounded-full bg-[#f8f8f9] p-2 cursor-pointer"
+              ></i>
+            </div>
           </div>
 
           <a class="btn btn-primary">Sign In</a>
