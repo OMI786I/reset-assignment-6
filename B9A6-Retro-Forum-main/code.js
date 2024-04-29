@@ -13,13 +13,38 @@ const displayData = (data) => {
     const dataContainer = document.getElementById("data-container");
     const dataDiv = document.createElement("div");
     dataDiv.innerHTML = `
-    <div class="hero min-h-screen bg-base-200">
-    <div class="hero-content flex-col lg:flex-row">
-      <img src="${element.image}" class="max-w-sm rounded-lg shadow-2xl" />
+    <div class="hero mt-3 rounded-xl bg-base-200">
+    <div class="hero-content flex-row lg:flex-row items-start">
+      <img src="${element.image}" class=" w-[60px] rounded-lg shadow-2xl" />
       <div>
-        <h1 class="text-5xl font-bold">${element.title}</h1>
+
+      <div class = "flex gap-3">
+      <h1>#${element.category}</h1>
+      <h1>Author : ${element.author.name}</h1>
+      </div>
+      
+        <h1 class="text-3xl font-bold">${element.title}</h1>
         <p class="py-6">${element.description}</p>
-        <button class="btn btn-primary">Get Started</button>
+        <div class ="flex justify-between">
+        <div class = "flex items-center gap-1">
+        <div class ="flex items-center gap-1">
+        <i class="fa-regular fa-message"></i>
+        <p>${element.comment_count}</p>
+        </div>
+      
+        <div class = "flex items-center gap-1">
+        <i class="fa-regular fa-eye"></i>
+        <p>${element.view_count}</p>
+        </div>
+        <div class = "flex items-center gap-1">
+        <i class="fa-regular fa-clock"></i>
+        <p>${element.posted_time}</p>
+        </div>
+        </div>
+        <div class = "border rounded-full p-3 bg-[#10b981] cursor-pointer">
+        <i class="fa-regular fa-envelope-open text-white"></i>
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -29,20 +54,7 @@ const displayData = (data) => {
 
     console.log(element);
   });
-  const dataContainer = document.getElementById("data-container");
-  const dataDiv = document.createElement("div");
-  dataDiv.innerHTML = `
-  <div class="card w-96 bg-base-100 shadow-xl">
-  <div class="card-body">
-    <h2 class="card-title">"${data.title}"</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div>
 
-  `;
   dataContainer.appendChild(dataDiv);
   console.log(data[0].title);
 };
