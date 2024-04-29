@@ -12,10 +12,21 @@ const displayData = (data) => {
   data.forEach((element) => {
     const dataContainer = document.getElementById("data-container");
     const dataDiv = document.createElement("div");
+
     dataDiv.innerHTML = `
     <div class="hero mt-3 rounded-xl bg-base-200">
     <div class="hero-content flex-row lg:flex-row items-start">
-      <img src="${element.image}" class=" w-[60px] rounded-lg shadow-2xl" />
+   
+    <div class ="avatar online" id="avatar-container"> 
+
+    <div class= "  w-[60px] rounded-lg shadow-2xl">
+    
+    <img src="${element.image}" class="" />
+    </div>
+    
+    
+    </div>
+     
       <div>
 
       <div class = "flex gap-3">
@@ -50,11 +61,9 @@ const displayData = (data) => {
   </div>
       
         `;
+
     dataContainer.appendChild(dataDiv);
 
     console.log(element);
   });
-
-  dataContainer.appendChild(dataDiv);
-  console.log(data[0].title);
 };
