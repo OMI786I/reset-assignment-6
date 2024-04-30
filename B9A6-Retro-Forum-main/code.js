@@ -176,7 +176,11 @@ const displayData2 = (data) => {
     <div class="card md:w-56 lg:w-80 bg-base-100 shadow-xl">
     <figure><img src="${iterator.cover_image}" alt="Shoes" /></figure>
     <div class="card-body">
-    <p><i class="fa-solid fa-calendar-days"></i> ${iterator.author.posted_date}</p>
+    <p><i class="fa-solid fa-calendar-days"></i> ${
+      iterator.author.posted_date
+        ? iterator.author.posted_date
+        : "No Publish Date"
+    }</p>
       <h2 class="card-title">${iterator.title}</h2>
       <p>${iterator.description}</p>
       <div class="card-actions justify-start">
@@ -187,7 +191,9 @@ const displayData2 = (data) => {
     </div>
  <div>
     <h1 class = "text-[16px] font-bold">${iterator.author.name}</h1>
-    <p class ="text-[12px]">${iterator.author.designation}</p>
+    <p class ="text-[12px]">${
+      iterator.author.designation ? iterator.author.designation : "Unknown"
+    }</p>
     </div> 
     </div>
     </div>
