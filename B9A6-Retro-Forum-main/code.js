@@ -132,9 +132,11 @@ const displayData = (data) => {
 
     dataContainer.appendChild(dataDiv);
   });
+  loaderSpinner(false);
 };
 
 const searchFunction = () => {
+  loaderSpinner(true);
   const searchField = document.getElementById("search-bar");
   const searchText = searchField.value;
   filteredData(searchText);
@@ -207,6 +209,15 @@ const displayData2 = (data) => {
   </div>
     `;
     container.appendChild(newDIv);
+  }
+};
+
+const loaderSpinner = (isLoading) => {
+  const div = document.getElementById("spinner");
+  if (isLoading) {
+    div.classList.remove("hidden");
+  } else {
+    div.classList.add("hidden");
   }
 };
 
