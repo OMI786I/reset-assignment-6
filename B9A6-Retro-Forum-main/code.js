@@ -1,4 +1,5 @@
 const jsonData = [];
+const array = [];
 
 const loadData = async (data) => {
   const url = `https://openapi.programming-hero.com/api/retro-forum/posts`;
@@ -138,19 +139,24 @@ const searchFunction = () => {
 const clickList = (id) => {
   const container = document.getElementById("selected-data");
   for (const iterator of jsonData) {
+    const div = document.createElement("div");
     if (iterator.id == id) {
-      const div = document.createElement("div");
+      array.push(iterator.id);
+
       div.innerHTML = `
       <div class = " flex justify-between mb-3 bg-white p-4 rounded-xl">
       <h1 class="text-xl">${iterator.title}</h1>
       <div class="flex items-center gap-1">
       <i class="fa-regular fa-eye"></i>
-      <p>1568</p></div>
+      <p>${iterator.view_count}</p></div>
       </div>
       `;
-      container.appendChild(div);
     }
+    container.appendChild(div);
   }
+  console.log(array);
+  const count = document.getElementById("mark-count");
+  count.innerText = array.length;
 };
 
 const loadLatestData = async () => {
@@ -199,4 +205,5 @@ const displayData2 = (data) => {
     container.appendChild(newDIv);
   }
 };
+
 loadData();
