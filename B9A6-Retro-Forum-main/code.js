@@ -156,23 +156,42 @@ const clickList = async (id) => {
   }
 };
 
-/*
-const active = (id) => {
-  const container = document.getElementById("avatar-container");
+const loadLatestData = async () => {
+  const url = `https://openapi.programming-hero.com/api/retro-forum/latest-posts`;
+  const res = await fetch(url);
+  const data2 = await res.json();
+  console.log(data2);
+  displayData2(data2);
+};
 
-  for (const iterator of jsonData) {
-    const newDiv = document.createElement("div");
-    if (iterator.isActive == true) {
-      newDiv.innerHTML = `
-      <div class = "avatar online"  > 
-      <div class= "  w-[60px] rounded-lg shadow-2xl">
-      <img src="${iterator.image}" class="" />
-      </div>
-      </div>
+loadLatestData();
 
-      `;
-      container.appendChild(newDiv);
-    }
+const displayData2 = (data) => {
+  const container = document.getElementById("posts-container");
+  for (const iterator of data) {
+    const newDIv = document.createElement("div");
+
+    newDIv.innerHTML = `
+    <div class="card w-80 bg-base-100 shadow-xl">
+    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+    <div class="card-body">
+    <p><i class="fa-solid fa-calendar-days"></i> date</p>
+      <h2 class="card-title">Shoes!</h2>
+      <p>If a dog chews shoes whose shoes does he choose?</p>
+      <div class="card-actions justify-start">
+      <div class="avatar">
+      <div class="w-[45px] rounded-full">
+        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+      </div>
+    </div>
+ <div>
+    <h1 class = "text-[16px] font-bold">name</h1>
+    <p class ="text-[12px]">Occupation</p>
+    </div> 
+    </div>
+    </div>
+  </div>
+    `;
+    container.appendChild(newDIv);
   }
 };
-*/
