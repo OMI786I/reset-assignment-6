@@ -169,24 +169,25 @@ loadLatestData();
 const displayData2 = (data) => {
   const container = document.getElementById("posts-container");
   for (const iterator of data) {
+    console.log(iterator);
     const newDIv = document.createElement("div");
 
     newDIv.innerHTML = `
     <div class="card w-80 bg-base-100 shadow-xl">
-    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+    <figure><img src="${iterator.cover_image}" alt="Shoes" /></figure>
     <div class="card-body">
-    <p><i class="fa-solid fa-calendar-days"></i> date</p>
-      <h2 class="card-title">Shoes!</h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
+    <p><i class="fa-solid fa-calendar-days"></i> ${iterator.author.posted_date}</p>
+      <h2 class="card-title">${iterator.title}</h2>
+      <p>${iterator.description}</p>
       <div class="card-actions justify-start">
       <div class="avatar">
       <div class="w-[45px] rounded-full">
-        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        <img src="${iterator.profile_image}" />
       </div>
     </div>
  <div>
-    <h1 class = "text-[16px] font-bold">name</h1>
-    <p class ="text-[12px]">Occupation</p>
+    <h1 class = "text-[16px] font-bold">${iterator.author.name}</h1>
+    <p class ="text-[12px]">${iterator.author.designation}</p>
     </div> 
     </div>
     </div>
