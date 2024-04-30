@@ -135,14 +135,11 @@ const searchFunction = () => {
   filteredData(searchText);
 };
 
-loadData();
-
-const clickList = async (id) => {
+const clickList = (id) => {
+  const container = document.getElementById("selected-data");
   for (const iterator of jsonData) {
-    const container = document.getElementById("selected-data");
-    const div = document.createElement("div");
-
     if (iterator.id == id) {
+      const div = document.createElement("div");
       div.innerHTML = `
       <div class = " flex justify-between mb-3 bg-white p-4 rounded-xl">
       <h1 class="text-xl">${iterator.title}</h1>
@@ -202,3 +199,4 @@ const displayData2 = (data) => {
     container.appendChild(newDIv);
   }
 };
+loadData();
