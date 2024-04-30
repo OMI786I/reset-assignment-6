@@ -173,7 +173,7 @@ const displayData2 = (data) => {
     const newDIv = document.createElement("div");
 
     newDIv.innerHTML = `
-    <div class="card w-80 bg-base-100 shadow-xl">
+    <div class="card md:w-56 lg:w-80 bg-base-100 shadow-xl">
     <figure><img src="${iterator.cover_image}" alt="Shoes" /></figure>
     <div class="card-body">
     <p><i class="fa-solid fa-calendar-days"></i> ${iterator.author.posted_date}</p>
