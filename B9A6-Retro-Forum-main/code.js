@@ -1,3 +1,5 @@
+const jsonData = [];
+
 const loadData = async (data) => {
   const url = `https://openapi.programming-hero.com/api/retro-forum/posts`;
   const res = await fetch(url);
@@ -17,6 +19,7 @@ const displayData = (data) => {
   const dataContainer = document.getElementById("data-container");
   dataContainer.innerHTML = "";
   data.forEach((element) => {
+    jsonData.push(element);
     const dataDiv = document.createElement("div");
 
     dataDiv.innerHTML = `
@@ -60,7 +63,7 @@ const displayData = (data) => {
         </div>
         </div>
         <div class = "border rounded-full p-3 bg-[#10b981] cursor-pointer">
-        <button><i class="fa-regular fa-envelope-open text-white" onclick="clickList('${element.title}')"></i></button>
+        <i class="fa-regular fa-envelope-open text-white" onclick="clickList('${element.id}')"  href="#" ></i>
         </div>
         </div>
       </div>
@@ -71,7 +74,6 @@ const displayData = (data) => {
 
     dataContainer.appendChild(dataDiv);
   });
-  console.log(data);
 };
 
 const searchFunction = () => {
@@ -82,17 +84,22 @@ const searchFunction = () => {
 
 loadData();
 
-const clickList = (title) => {
-  const container = document.getElementById("selected-data");
-  const div = document.createElement("div");
+const clickList = async (id) => {
+  for (const iterator of jsonData) {
+    console.log(iterator);
+    if (iterator.id == id) {
+      const container = document.getElementById("selected-data");
+      const div = document.createElement("div");
 
-  div.innerHTML = `
-  <div class = " flex justify-between mb-3 bg-white p-4 rounded-xl">
-  <h1 class="text-xl">${title}</h1>
-  <div class="flex items-center gap-1">
-  <i class="fa-regular fa-eye"></i>
-  <p>1568</p></div>
-  </div>
-  `;
-  container.appendChild(div);
+      div.innerHTML = `
+      <div class = " flex justify-between mb-3 bg-white p-4 rounded-xl">
+      <h1 class="text-xl">${iterator.title}</h1>
+      <div class="flex items-center gap-1">
+      <i class="fa-regular fa-eye"></i>
+      <p>1568</p></div>
+      </div>
+      `;
+      container.appendChild(div);
+    }
+  }
 };
