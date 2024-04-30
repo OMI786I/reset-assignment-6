@@ -64,9 +64,10 @@ const displayData = (data) => {
           
           </div>
           </div>
-          <div class = "border rounded-full p-3 bg-[#10b981] cursor-pointer">
-          <i class="fa-regular fa-envelope-open text-white" onclick="clickList('${element.id}')"  href="#" ></i>
-          </div>
+          <div class = "border rounded-full   ">
+          <button  onclick="clickList('${element.id}')"  href="#" class ="btn btn-accent btn-sm" >
+          <i class="fa-solid fa-envelope-open text-white"></i>
+          </button>
           </div>
         </div>
       </div>
@@ -115,8 +116,11 @@ const displayData = (data) => {
           
           </div>
           </div>
-          <div class = "border rounded-full p-3 bg-[#10b981] cursor-pointer">
-          <i class="fa-regular fa-envelope-open text-white" onclick="clickList('${element.id}')"  href="#" ></i>
+          <div class = "border rounded-full   ">
+          <button  onclick="clickList('${element.id}')"  href="#" class ="btn btn-accent btn-sm" >
+          <i class="fa-solid fa-envelope-open text-white"></i>
+          </button>
+          
           </div>
           </div>
         </div>
